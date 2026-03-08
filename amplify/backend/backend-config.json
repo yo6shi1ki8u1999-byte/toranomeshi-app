@@ -1,0 +1,101 @@
+{
+  "api": {
+    "toranomeshiapi": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "postsFunction"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "commentsFunction"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "uploadFunction"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "function": {
+    "commentsFunction": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "postsFunction": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "uploadFunction": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_commentsFunction_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "commentsFunction"
+        }
+      ]
+    },
+    "AMPLIFY_function_commentsFunction_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "commentsFunction"
+        }
+      ]
+    },
+    "AMPLIFY_function_postsFunction_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "postsFunction"
+        }
+      ]
+    },
+    "AMPLIFY_function_postsFunction_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "postsFunction"
+        }
+      ]
+    },
+    "AMPLIFY_function_uploadFunction_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "uploadFunction"
+        }
+      ]
+    },
+    "AMPLIFY_function_uploadFunction_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "uploadFunction"
+        }
+      ]
+    }
+  }
+}
